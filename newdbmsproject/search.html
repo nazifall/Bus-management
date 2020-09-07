@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Management System </title>
+    <link href='search.css' rel='stylesheet'>
+    <h1 align="center"><b>Bus Management System</b></h1>
+</head>
+
+<body align="center" style="background-color:lightgray;">
+	
+	<h2>Search Form</h2>
+
+    <form action="/newdbmsprojecte/search1.html" method="POST">
+			
+			<br><br>
+			<label name="Destination"> Destination </label>
+			<input type="textbox" size="25" name="Destination"/>
+			
+			<label name="Sourse"> Source </label>
+			<input type="textbox" size="25" name="Source"/>
+			<br><br>
+			
+		   <label name="Type">Type </label>
+		   <input list="Type" name="browser">
+		   <datalist id ="Type">
+		   <option value="Highway">Highway</option>
+		   <option value="Local">Local</option>
+		   </datalist>
+			<br><br>
+			
+			<label> Date: </label>
+			<input type="date"/>
+			<br><br>
+			
+			<input type="Submit">
+				
+	</form>
+		
+</body>
+</html>

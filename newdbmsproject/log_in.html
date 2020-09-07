@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<style>
+form {
+    border: 3px solid green;
+}
+
+input[type=password],input[type=text] {
+  
+    padding: 4px 4px;
+    margin: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    
+}
+
+button {
+    background-color: green;
+    color: White;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+	border-radius:8px;
+}
+
+button:hover {
+background-color: gray;
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 25px;
+    background-color: darkRed;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+</style>
+<head>
+
+</head>
+<body align="center" style="background-color:transparent;">
+	
+	
+	<h1 align="center">Bus Management System</h1>
+
+	<form action="/newdbmsproject/log.php">
+	
+		<div class="imgcontainer">
+				<img src="login.png" height="100" width="100">
+				<h2 style="color:mediumspringgreen;"><u>Log in to your account </u></h2>
+		</div>
+
+		<div>
+				<label name="Email"> <b>Email :</b></label><br>
+				<input type="textbox" placeholder="Enter Email" size="30" name="Email"/>
+			
+				<br><br>
+				<label><b>Password :</b></label>
+				<br>
+				<input type="password" placeholder="Enter Password"  size="30" name="password">
+        
+				<br><br>
+				<button type="submit"><a href="#">Login</button><br><br>
+				<input type="checkbox" checked="checked"> Remember me
+		</div>
+
+		<div align="left" class="container" style="background-color:skyblue">
+				<span class="psw">Forgot <a href="#">password?</a></span>
+				<button type="button" class="cancelbtn"><a href="/newdbmsproject/index.html">Cancel</button>
+		
+		</div>
+		
+	</form>
+
+</body>
+</html>

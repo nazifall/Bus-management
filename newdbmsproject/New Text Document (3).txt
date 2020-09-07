@@ -1,0 +1,10 @@
+create table Booking(
+                     Booking_Id          varchar(8),
+                     Bus_id              varchar(8),      
+                     User_Id		 varchar(8),
+                     Booking_time        datetime,
+                     Seat_number         numeric(2,0),
+                     primary key (Booking_Id),
+                     foreign key (Bus_id)references Bus(ID),
+                     foreign key (User_id)references User(User_Id)
+                     );

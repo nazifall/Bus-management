@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Management System</title>
+    <style>
+
+#table_style {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table_style td, #table_style th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table_style tr:nth-child(even){background-color: #f2f2f2;}
+
+#table_style tr:hover {background-color: #ddd;}
+
+#table_style th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #54C1A9;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <h2>Bus Details</h2>
+    <div class="table">
+                <table id="table_style">
+                  <tr>
+                    <th>Bus Id</th>
+                    <th>Bus Name</th>
+                    <th>Place Name</th>
+                    <th>Type1</th>
+                    <th>Type2</th>
+                    <th>Capacity</th>
+                    <th>Price</th>
+                  </tr>  
+				  
+<?php
+
+	//	include("connect.php");
+		$Destination = $_POST["Destination"];
+$source = $_POST["Source"];
+$Type1 = $_POST["Type1"];
+$date = $_POST[date];
+
+$conn = mysqli_connect("localhost", $Destination, $source, $Type1, $data, "bus_ms");
+
+if($conn->connect_errno > 0){
+    die("Unable to connect: ". $conn->connect_error);
+}
+		
+$sql = "SELECT bus.ID,bus.Name,bus.Source,bus.destination,place.Place_name FROM bus,place,bus_place,time_slot where bus.ID=bus_place.Bus_id and place.Place_id=bus_place.Place_id and bus.ID=time_slot.Bus_id and bus.Destination='".$Destination"' and bus.Source='".$Source"' and bus.Type1='".$Type1"' and time_slot.Start_Date_time='".$Date"'";
+
+					
+					
+		$result = $conn->query($sql);
+             if ($result->num_rows > 0) {
+			 // output data of each row
+			 while($row = $result->fetch_assoc()) { ?>
+                    <tr>
+                        <td><?php echo $row["ID"] ?></td>
+                        <td><?php echo $row["Name"] ?></td>
+                        <td><?php echo $row["Place_name"] ?></td>
+                        <td><?php echo $row["Type1"] ?></td>
+                        <td><?php echo $row["Type2"] ?></td>
+                        <td><?php echo $row["Capacity"] ?></td>
+                        <td><?php echo $row["Price"] ?></td>
+                    </tr>
+                  <?php			 
+				 
+			 }
+		} else {
+			 echo "0 results";
+		}
+
+		$conn->close();
+	?> 
+                </table>
+				
+            </div>
+</body>
+</html>
